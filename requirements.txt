@@ -1,0 +1,12 @@
+ipykernel
+scikit-learn
+statsmodels
+pandas
+xgboost
+opencv-contrib-python
+pillow
+gradio
+tensorflow
+imblearn
+nltk
+textblob
