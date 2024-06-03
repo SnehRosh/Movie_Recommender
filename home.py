@@ -44,8 +44,10 @@ if btn:
 #Movie recommendation based on selected movie
 st.subheader("Enter the name of Movie for recommendation")
 c1,c2=st.columns(2)
-movie_list=df.index.tolist()
-mv_dl=c1.text_input('Enter the name of the movie')
+movie_title = df[['title']]
+inx = df.set_index('title')
+movie_list=inx.index.tolist()
+option = st.selectbox('Select the name of the movie',options = movie_list)
 df['data'] = df['title'] + ' ' + df['director'] + ' ' +  df['genre']
     #remove punctuations - anything that is not a word or a space
 df['data'] = df['data'].str.replace('[^\w\s]','')
@@ -75,8 +77,8 @@ def recommend_movie(title, Limit = 10):
             movie_scores.append((df['title'][i],similarity[index][i]))
         movie_scores.sort(key=lambda x:x[1],reverse = True)
         return movie_scores[1:Limit+1]
-if mv_dl:    
-    rm= recommend_movie(mv_dl,5)
+if option:    
+    rm= recommend_movie(option,5)
     drm=pd.DataFrame(rm)
     drm
 from turtle import *
