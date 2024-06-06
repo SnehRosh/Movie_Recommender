@@ -7,7 +7,9 @@ from nltk.corpus import stopwords
 import textblob
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import turtle
+
+
+  
 
 
 # Config
@@ -81,5 +83,3 @@ if option:
     rm= recommend_movie(option,5)
     drm=pd.DataFrame(rm)
     drm
-from turtle import *
-#bgpic('bckgrd.jpg')
