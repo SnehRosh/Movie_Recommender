@@ -1,16 +1,8 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import numpy as np
-import nltk
 from nltk.corpus import stopwords
-import textblob
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
-
-  
-
 
 # Config
 st.set_page_config(
@@ -19,16 +11,6 @@ st.set_page_config(
     page_icon="🎬",
     initial_sidebar_state='expanded',)
 
-page_bg_img = '''
-<style>
-body {
-background-image: bg.jpg;
-background-size: cover;
-}
-</style>
-'''
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def load_data(path):
     df = pd.read_csv('C:/Users/Hp/OneDrive/Desktop/PYDS/Movie_recommender/imdb_raw.csv')    
