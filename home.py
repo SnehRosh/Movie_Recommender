@@ -19,6 +19,17 @@ st.set_page_config(
     page_icon="🎬",
     initial_sidebar_state='expanded',)
 
+page_bg_img = '''
+<style>
+body {
+background-image: bg.jpg;
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 def load_data(path):
     df = pd.read_csv('C:/Users/Hp/OneDrive/Desktop/PYDS/Movie_recommender/imdb_raw.csv')    
     return df
