@@ -13,12 +13,12 @@ st.set_page_config(
 
 
 def load_data(path):
-    df = pd.read_csv('C:/Users/Hp/OneDrive/Desktop/PYDS/Movie_recommender/imdb_raw.csv')    
+    df = pd.read_csv('imdb_raw.csv')    
     return df
 
 
 with st.spinner('Processing Movies Data'):
-    df=load_data('C:/Users/Hp/OneDrive/Desktop/PYDS/Movie_recommender/imdb_raw.csv')
+    df=load_data('imdb_raw.csv')
 with st.container():
     st.title("Movie Remommendation website")
 
