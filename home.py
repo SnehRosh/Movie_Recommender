@@ -49,6 +49,7 @@ df['data'] = df['title'] + ' ' + df['director'] + ' ' +  df['genre']
 df['data'] = df['data'].str.replace('[^\w\s]','')
     # Lower case
 df['data'] = df['data'].str.lower()
+nltk.download('stopwords')
 def remove_stopwords(text):
     words = text.split()
     return" ".join(word for word in words if word not in stopwords.words('english'))
